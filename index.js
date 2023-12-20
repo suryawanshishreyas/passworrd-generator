@@ -14,9 +14,9 @@ const symbols = '`!@#$%^&*()_-+={}[];:"<>,.?/';
 
 let password = "";
 let passwordLength = 10;
-uppercaseCheck.checked =true;
+// uppercaseCheck.checked =true;
 
-let checkCount = 1;
+let checkCount = 0;
 handleSlider();
 // set strength circle color to grey
 console.log('1');
@@ -120,7 +120,7 @@ function handleCheckBoxChange(){
 }
 
 allCheckBox.forEach((checkbox)=>{
-    checkbox.addEventListener('change',handleCheckBoxChange());
+    checkbox.addEventListener('change',handleCheckBoxChange);
 })
 
 
@@ -171,25 +171,114 @@ generateBtn.addEventListener('click', ()=>{
 
     let funcArr = [];
 
-    if(uppercaseCheck.checked)
-        funcArr.push(generateUpperCase());
-    if(lowercaseCheck.checked)
-        funcArr.push(generateLowerCase());
-    if(numbersCheck.checked)
-        funcArr.push(generateRandomNumber());
-    if(symbolsCheck.checked)
-        funcArr.push(generateSymbol());
-    console.log(funcArr);
+    // if(uppercaseCheck.checked)
+    //     funcArr.push(generateUpperCase());
+    // if(lowercaseCheck.checked)
+    //     funcArr.push(generateLowerCase());
+    // if(numbersCheck.checked)
+    //     funcArr.push(generateRandomNumber());
+    // if(symbolsCheck.checked)
+    //     funcArr.push(generateSymbol());
+    // console.log(funcArr);
     // content for password addition
 
-    for(let i=0; i<funcArr.length; i++){
-        password += funcArr[i];
-    }
+    // for(let i=0; i<funcArr.length; i++){
+    //     password += funcArr[i];
+    // }
+    
 
-    for(let i=0; i< passwordLength - funcArr.length; i++){
+    for(let i=0; i< passwordLength; i++){
         let randIndex = getRndInteger(0, funcArr.length);
-        password += funcArr[randIndex];
+        if(uppercaseCheck.checked){
+            funcArr=[];
+            otherArr=[];
+            otherArr.push(generateUpperCase());
+            if(lowercaseCheck.checked){
+                otherArr.push(generateLowerCase());
+            }
+            if(numbersCheck.checked){
+                otherArr.push(generateRandomNumber());
+            }
+            if(symbolsCheck.checked){
+                otherArr.push(generateSymbol());
+            }
+            rndNum = otherArr[getRndInteger(0,otherArr.length)];
+            funcArr.push(rndNum);
+        }
         
+        if(lowercaseCheck.checked){
+            funcArr=[];
+            otherArr=[];
+            otherArr.push(generateLowerCase());
+            if(lowercaseCheck.checked){
+                otherArr.push(generateLowerCase());
+            }
+            if(numbersCheck.checked){
+                otherArr.push(generateRandomNumber());
+            }
+            if(symbolsCheck.checked){
+                otherArr.push(generateSymbol());
+            }
+            if(uppercaseCheck.checked){
+                otherArr.push(generateUpperCase())
+            }
+            rndNum = otherArr[getRndInteger(0,otherArr.length)];
+            funcArr.push(rndNum);
+        }
+        if(numbersCheck.checked){
+            funcArr=[];
+            otherArr=[];
+            otherArr.push(generateRandomNumber());
+            if(lowercaseCheck.checked){
+                otherArr.push(generateLowerCase());
+            }
+            if(numbersCheck.checked){
+                otherArr.push(generateRandomNumber());
+            }
+            if(symbolsCheck.checked){
+                otherArr.push(generateSymbol());
+            }
+            if(uppercaseCheck.checked){
+                otherArr.push(generateUpperCase())
+            }
+            rndNum = otherArr[getRndInteger(0,otherArr.length)];
+            funcArr.push(rndNum);
+        }
+        if(symbolsCheck.checked){
+            funcArr=[];
+            otherArr=[];
+            otherArr.push(generateSymbol());
+            if(lowercaseCheck.checked){
+                otherArr.push(generateLowerCase());
+            }
+            if(numbersCheck.checked){
+                otherArr.push(generateRandomNumber());
+            }
+            if(symbolsCheck.checked){
+                otherArr.push(generateSymbol());
+            }
+            if(uppercaseCheck.checked){
+                otherArr.push(generateUpperCase())
+            }
+            rndNum = otherArr[getRndInteger(0,otherArr.length)];
+            funcArr.push(rndNum);
+        }
+
+        if(allCheckBox.checked){
+            funcArr=[];
+            otherArr=[];
+            otherArr.push(generateLowerCase());
+            otherArr.push(generateUpperCase());
+            otherArr.push(generateRandomNumber());
+            otherArr.push(generateSymbol());
+            rndNum = otherArr[getRndInteger(0,otherArr.length)];
+            funcArr.push(rndNum);
+        }
+
+        if(checkCount === 0){
+            console.log('please select atleast one case');
+        }
+        password += funcArr[randIndex];
     }
 
     // shuffle the password

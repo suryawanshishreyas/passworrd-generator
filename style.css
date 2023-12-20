@@ -1,0 +1,92 @@
+*,
+*::before,
+::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(60deg,rgb(15, 250, 15),rgb(3, 126, 3),rgb(3, 24, 3),black);
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'League Spartan';
+    padding: 1rem;
+    color: rgb(240, 237, 90);
+    line-height: 1.2;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
+}
+
+.display-container{
+    padding: 1rem 5rem;
+    border: 1px solid black;
+    border-radius: 5%;
+    position: relative;
+}
+
+.display{
+    padding: 0.5rem;
+    margin: 0.2rem 0.4rem;
+    
+}
+
+.input-container{
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+::placeholder{
+    color: blue;
+    font-size: 14px;
+    text-align: start;
+}
+
+
+.length-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
+    color: rgb(168, 233, 233);
+}
+
+[data-copy]{
+    position: absolute;
+    top: 1.2rem;
+    right: 3rem;
+}
+
+[data-lengthSlider]{
+    width: 100%;
+}
+
+.strength-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.generateButton{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 0.5rem 0;
+    font-size: large;
+}
+
+.input-container div{
+    margin: 0.5rem 0;
+    
+}
