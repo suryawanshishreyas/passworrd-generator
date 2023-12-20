@@ -15,8 +15,8 @@
         <h1>Password Generator</h1>
         <div class="display-container">
             <input readonly placeholder="Password Generate Here" class="display" data-passwordDisplay>
-            <button data-copy>
-                <span data-copyMsg></span>
+            <button data-copy class="copy-btn">
+                <span data-copyMsg class="tooltip"></span>
                 <img src="./assets/images/copy-regular.svg" alt="copyClipboard" width="23" height="23">
             </button>
             
@@ -33,7 +33,7 @@
                 <!-- checkboxes -->
                 <div>
                     <input type="checkbox" id="uppercase">
-                    <label for="uppercase">Include Uppercase Letters</label>
+                    <label for="uppercase">Include uppercase Letters</label>
                 </div>
                 
                 <div>
@@ -54,7 +54,7 @@
                 <!-- Strength Section -->
                 <div class="strength-container">
                     <p>Strength</p>
-                    <div data-indicator></div>
+                    <div data-indicator class="indicator"></div>
                 </div>
 
                 <!-- generate password button -->

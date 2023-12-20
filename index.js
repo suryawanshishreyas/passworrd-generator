@@ -19,7 +19,7 @@ let passwordLength = 10;
 let checkCount = 0;
 handleSlider();
 // set strength circle color to grey
-console.log('1');
+setIndicator('#ccc');
 // Set password length [passwordLength]
 function handleSlider(){
     inputSlider.value = passwordLength;
@@ -27,9 +27,8 @@ function handleSlider(){
 }
 
 function setIndicator(color){
-    indicator.style.backgoundColor = color;
-    // shadow
-
+    indicator.style.backgroundColor = color;
+    
 }
 
 function getRndInteger(min,max){
